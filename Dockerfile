@@ -1,4 +1,4 @@
-FROM buluma/alpine_build:latest
+FROM alpine:latest
 LABEL author="Michael Buluma <bulumaknight@gmail.com>"
 
 LABEL "com.github.actions.name"="Upload to Release"
