@@ -1,5 +1,5 @@
-name: upload-to-release
-description: Uploads a file to a GitHub release
+name: buluma-upload-to-release
+description: Buluma - Uploads a file to a GitHub release
 author: buluma
 branding:
   color: blue
