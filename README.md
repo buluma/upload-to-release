@@ -1,6 +1,8 @@
 <h3 align="center">Upload to Release</h3>
 <p align="center">A GitHub Action that uploads a file to a new release.<p>
 
+[![CI](https://github.com/buluma/upload-to-release/actions/workflows/main.yml/badge.svg)](https://github.com/buluma/upload-to-release/actions/workflows/main.yml)
+
 ## Usage
 
 This action uploads any file to a new release:
