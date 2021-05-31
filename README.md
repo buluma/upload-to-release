@@ -47,7 +47,7 @@ You must pass at least one argument, the path to the file you want to attach. Yo
 
 ```yaml
 - name: Upload to release
-  uses: JasonEtco/upload-to-release@master
+  uses: buluma/upload-to-release@master
   with:
     args: release-image.tar
   env:
@@ -60,7 +60,7 @@ You may also need to pass an additional argument, the `Content-Type` header used
 
 ```yaml
 - name: Upload to release
-  uses: JasonEtco/upload-to-release@master
+  uses: buluma/upload-to-release@master
   with:
     args: release-image.tar application/zip
   env:
