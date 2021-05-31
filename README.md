@@ -26,17 +26,17 @@ jobs:
       - name: Build Docker image
         uses: actions/docker/cli@master
         with:
-          args: build . -t my-image
+          args: build . -t release-image
 
       - name: Save the image
         uses: actions/docker/cli@master
         with:
-          args: save my-image:latest
+          args: save release-image:latest
 
       - name: Upload to release
-        uses: JasonEtco/upload-to-release@master
+        uses: buluma/upload-to-release@master
         with:
-          args: my-image.tar
+          args: release-image.tar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -49,7 +49,7 @@ You must pass at least one argument, the path to the file you want to attach. Yo
 - name: Upload to release
   uses: JasonEtco/upload-to-release@master
   with:
-    args: my-image.tar
+    args: release-image.tar
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -62,7 +62,7 @@ You may also need to pass an additional argument, the `Content-Type` header used
 - name: Upload to release
   uses: JasonEtco/upload-to-release@master
   with:
-    args: my-image.tar application/zip
+    args: release-image.tar application/zip
   env:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
