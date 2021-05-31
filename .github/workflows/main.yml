@@ -25,12 +25,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       # Upload to release
       - name: buluma-upload-to-release
         # You may pin to the exact commit or the version.
         # uses: buluma/upload-to-release@84184bcc421e50d526a764dabb28145eab81744f
         uses: buluma/upload-to-release@v1.0
+
+      - name: Create Issue on Action failure.
+        if: failure()
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          title: Action Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
+          assignees: ${{github.actor}}
+          labels: bug
+          body: Action test failed for commit ${{github.sha}}
+
